@@ -22,8 +22,12 @@ class PartyTests(unittest.TestCase):
     def test_no_rsvp_yet(self):
         """Do users who haven't RSVPed see the correct view?"""
 
-        # FIXME: Add a test to show we haven't RSVP'd yet
-        print('FIXME')
+        result = self.client.get('/')
+        self.assertIn(b'Please RSVP', result.data)
+
+        result = self.client.post('/', data={'name': 'John Smith', 
+                                            'email': 'john@ubermelon.com'})
+        self.assertNotIn(b'Party Details', result.data)
 
     def test_rsvp(self):
         """Do RSVPed users see the correct view?"""
