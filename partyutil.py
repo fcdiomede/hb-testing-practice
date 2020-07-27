@@ -4,8 +4,18 @@
 def is_mel(name, email):
     """Return True if name and email are related to Mel.
 
-    >>> is_mel('hi', 'hi')
-    False
+    Examples:
+        >>> is_mel('Mel Melitpolski', 'mel@ubermelon.com')
+        True
+
+        >>> is_mel('Fernanda Diomede', 'fernanda@ubermelon.com')
+        False
+
+        >>> is_mel('Mel Melitpolski', 'innowayisthismel@ubermelon.com')
+        True
+
+        >>> is_mel('Melisa Polski', 'mel@ubermelon.com')
+        True    
     """
 
     return name == 'Mel Melitpolski' or email == 'mel@ubermelon.com'
