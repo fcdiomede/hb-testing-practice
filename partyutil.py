@@ -27,6 +27,29 @@ def most_and_least_common_type(treats):
     Return most and least common treat types in tuple of format
     (most, least). If there's a tie, the dessert that appears
     first in alphabetical order should win.
+
+    Examples:
+        >>> treats = [
+        ... {'type': 'drink'},
+        ... {'type': 'drink'},
+        ... {'type': 'pizza'},
+        ... {'type': 'pizza'},
+        ... {'type': 'fruit'}]
+        >>> most_and_least_common_type(treats)
+        ('drink', 'fruit')
+
+
+        >>> treats = []
+        >>> most_and_least_common_type(treats)
+        (None, None)
+
+        >>> treats = [{'type': 'drink'},{'type': 'fruit'}]
+        >>> most_and_least_common_type(treats)
+        ('drink', 'drink')
+
+        >>> treats = [{'type': 'drink'},{'type': 'fruit'}]
+        >>> most_and_least_common_type(treats)
+        ('drink', 'drink')
     """
 
     if not treats:
