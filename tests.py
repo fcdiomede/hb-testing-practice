@@ -24,9 +24,6 @@ class PartyTests(unittest.TestCase):
 
         result = self.client.get('/')
         self.assertIn(b'Please RSVP', result.data)
-
-        result = self.client.post('/', data={'name': 'John Smith', 
-                                            'email': 'john@ubermelon.com'})
         self.assertNotIn(b'Party Details', result.data)
 
     def test_rsvp(self):
